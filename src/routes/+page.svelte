@@ -1,11 +1,21 @@
 <script>
-	let { data } = $props();
-    const members = data.members
-    console.log(data);
+  let { data } = $props();
+  const members = data.members;
+  console.log(data);
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-{#each members as member }
-    <li> <a href="/{member.id}">{member.name}</a></li>
+
+<h1>FDND Squadpage</h1>
+
+<p>hier komen filters</p>
+
+{#each members as member}
+  <ul>
+    <li class="person-card">
+        <img src="{member.avatar}" alt="">
+        <h3>{member.name}</h3>
+        <a href="{member.website}">github logo</a>
+    </li>
+  </ul>
 {/each}
+
