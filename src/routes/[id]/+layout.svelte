@@ -14,13 +14,13 @@
 		h1 {
 			font-size: var(--fs-title);
 			color: var(--text-color);
-			margin: 0 0 0 1.5rem;
+			margin: 0.3em 0 0 1.5rem;
 		}
 
 		img {
 			border: 5px solid var(--text-color);
 			border-radius: 15px;
-			margin: 0 1.5em;
+			margin: 1em 1.5em;
 			background-color: var(--text-color);
 		}
 
