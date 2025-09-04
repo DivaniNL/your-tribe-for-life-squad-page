@@ -7,10 +7,10 @@
 
 <h1>Squad 2F</h1>
 
-<img src="{member.avatar}" alt="avatar image van {member.name}" width="250px" height="250px">
+<img src="{member.avatar}" alt="avatar image van {member.name}" width="250" height="250">
 <h2>{member.name}</h2>
 
-<section class="details-container">
+<div class="info-container">
     <article>
         <h3>Bio</h3>
         <p>{member.bio}</p>
@@ -21,7 +21,7 @@
         <a href="https://github.com/{member.github_handle}">Github</a>
         <a href="{member.website}">website</a>
     </article>
-</section>
+</div>
 
 <ul class="Favo-slider">
     {#each filters as filter}
@@ -31,7 +31,3 @@
     </li>
     {/each}
 </ul>
-
-
-
-
