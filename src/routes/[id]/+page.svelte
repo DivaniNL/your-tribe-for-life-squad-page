@@ -180,9 +180,9 @@
 </script>
 <div class="grid-wrapper">
     <h1>Squad 2F</h1>
-
-    <img src="{member.avatar}" alt="avatar image van {member.name}" width="250" height="250">
-
+    {#if member.avatar}
+        <img src="{member.avatar}" alt="avatar image van {member.name}" width="250" height="250">
+    {/if}
     <h2>{member.name}</h2>
 
     <div class="info-container">
