@@ -9,8 +9,6 @@ const allowedFilters = [
 const slugs = allowedFilters.map(filter => filter[0]);
 export async function load({url, params}){
     const filtertype = params.filtertype;
-    console.log(slugs, filtertype)
-    console.log(slugs.includes(filtertype));
     const isValidFilter = slugs.includes(filtertype);
     if(filtertype != '' && isValidFilter){
         const membersReponse = await fetch(`https://fdnd.directus.app/items/person/?sort=name&fields=id,name,nickname,github_handle,website,bio,avatar,birthdate,fav_color,squads.squad_id.name,squads.squad_id.cohort,`+ filtertype +`&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"FDND Jaar 2"}}}},{"squads":{"squad_id":{"cohort":"2526"}}}]}`)
@@ -21,11 +19,24 @@ export async function load({url, params}){
                 filterValue: isValidFilter && member[filtertype] ? member[filtertype] : "Geen voorkeur"
             })}
         );
-        return{members,allowedFilters}
+        // split members in half
+        const splitMembers = Math.ceil(members.length / 2);
+
+        // make variable for each slide
+        const firstHalf = members.slice(0, splitMembers); //first half
+        const secondHalf = members.slice(splitMembers); //second half
+        return{members,firstHalf, secondHalf, allowedFilters}
     }
     else{
         const membersResponse = await fetch(`https://fdnd.directus.app/items/person/?sort=name&fields=id,name,nickname,github_handle,website,bio,avatar,birthdate,fav_color,squads.squad_id.name,squads.squad_id.cohort&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"FDND Jaar 2"}}}},{"squads":{"squad_id":{"cohort":"2526"}}}]}`)
-        const membersReponseData = await membersResponse.json()
-        return{members: membersResponse.data, allowedFilters}
+        const membersReponseData = await membersResponse.json();
+        // split members in half
+        const splitMembers = Math.ceil(members.length / 2);
+
+        // make variable for each slide
+        const firstHalf = members.slice(0, splitMembers); //first half
+        const secondHalf = members.slice(splitMembers); //second half
+        return{members: membersResponse.data,firstHalf, secondHalf, allowedFilters}
     }
+    
 }
