@@ -1,5 +1,8 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
+    import { redirect, text } from '@sveltejs/kit';
+    import { nonpassive } from 'svelte/legacy';
+    import { normalizeModuleId } from 'vite/module-runner';
 
 	let { children } = $props();
 </script>
@@ -8,6 +11,75 @@
 	<link rel="icon" href={favicon} />
 
 	<style>
+		h1 {
+			justify-self: center;
+			font-size: var(--fs-title);
+			color: var(--text-color);
+		}
+
+		img {
+			border: 5px solid var(--text-color);
+			border-radius: 15px;
+		}
+
+		h2 {
+			font-size: var(--fs-section);
+		}
+
+		.basic-card {
+			border: 3px solid var(--text-color);
+			box-shadow: 7px 7px 0 var(--text-color);
+			border-radius: 15px;
+			margin: 1.5em 1em;
+			padding: 1em;
+		}
+
+		.section-bio h3 {
+			font-size: var(--fs-section);
+		}
+
+		.user-links {
+			display: grid;
+			grid-template-areas:
+			"title  title"
+			"git web";
+			height: 6em;
+		}
+
+		.user-links h3 {
+			grid-area: title;
+		}
+
+		.user-links a {
+			text-decoration: none;
+			color: var(--text-color);
+			padding: 0.5em;
+			border-radius: 15px;
+			width: min-content;
+			height: min-content;
+		}
+
+		.user-links a:hover {
+			background-color: var(--text-color);
+			color: var(--bg-dark);
+		}
+
+		.favo-card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			list-style: none;
+		}
+
+		.favo-card h3 {
+			font-size: var(--fs-section);
+		}
+
+		.favo-card span {
+			font-size: var(--fs-answer);
+			color: var(--highlight-text);
+			font-weight: var(--fw-semib);
+		}
 	</style>
 </svelte:head>
 

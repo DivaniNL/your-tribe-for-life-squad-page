@@ -15,6 +15,11 @@
 			object-fit: cover;
 		}
 
+    html {
+			background-color: #050542;
+      color: #66E5BF;
+		}
+
 		body {
 			/* colors */
 			--bg-dark: #050542;
@@ -32,6 +37,9 @@
 			--fs-answer: 2.25rem;
 			--fs-section: 3rem;
 			--fs-title: 3.375rem;
+
+      font-family: 'MontserratAlternates';
+      font-weight: var(--fw-reg);
 		}
 
 		@font-face {
