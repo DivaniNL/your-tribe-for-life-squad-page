@@ -38,6 +38,13 @@
 			font-size: var(--fs-section);
 		}
 
+		.section-bio p {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 10;
+			overflow: hidden;
+		}
+
 		.user-links {
 			display: grid;
 			grid-template-areas:
