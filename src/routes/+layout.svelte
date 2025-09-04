@@ -168,7 +168,6 @@
 
         img {
           opacity: 0.2;
-          z-index:-1;
         }
       }
 
@@ -205,6 +204,10 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+    }
+
+    .person-card a{
+      z-index:999;
     }
   </style>
 </svelte:head>
