@@ -43,32 +43,59 @@
 
 {#if members && members.length > 0}
   {#if firstHalf && firstHalf.length > 0}
-    <ul class="slider secondHalf">
+
+  <div class="contain">
+    <ul class="slider">
       {#each firstHalf as member}
-          <li class="person-card"> 
-            <img src={member.avatar} alt="" />
-            <h3>{member.name}</h3>
-            <p>{ member.filterValue}</p>
-            <a href="/{member.id}">Lees meer</a>
-            <a href={member.website}>github logo</a>
-          </li>
-      {/each} 
+        <li class="person-card">
+          <img src={member.avatar} alt="" />
+          <span>Show item</span>
+          <!-- <span>{member[filteredItem]}</span> -->
+          <h3>{member.name}</h3>
+          <p>{member.bio}</p>
+          <a href={member.website}>github logo</a>
+        </li>
+      {/each}
+
+      <!-- duplicate want anders is animatie kut (SORRY) -->
+      {#each firstHalf as member}
+        <li class="person-card">
+          <img src={member.avatar} alt="" />
+          <span>Show item</span>
+          <!-- <span>{member[filteredItem]}</span> -->
+          <h3>{member.name}</h3>
+          <a href={member.website}>github logo</a>
+        </li>
+      {/each}
+
     </ul>
+  </div>
   {:else}
   <!-- TODO: FALLBACK -->
   {/if}
   {#if secondHalf && secondHalf.length > 0}
-    <ul class="slider secondHalf">
+    <div class="contain">
+      <!-- bottom slider -->
+    <ul class="slider">
       {#each secondHalf as member}
-          <li class="person-card"> 
-            <img src={member.avatar} alt="" />
+        <li class="person-card">
+            <span><p>Show item</p></span>
+            <img src={member.avatar} alt="foto van{member.name}" />
             <h3>{member.name}</h3>
-            <p>{ member.filterValue}</p>
-            <a href="/{member.id}">Lees meer</a>
             <a href={member.website}>github logo</a>
-          </li>
-      {/each} 
-    </ul>
+        </li>
+      {/each}
+
+      {#each secondHalf as member}
+        <li class="person-card">
+            <span>Show item</span>
+            <img src={member.avatar} alt="foto van{member.name}" />
+            <h3>{member.name}</h3>
+            <a href={member.website}>github logo</a>
+        </li>
+      {/each}
+      </ul>
+  </div>
   {:else}
   <!-- TODO: FALLBACK -->
   {/if}

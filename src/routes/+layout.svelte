@@ -4,6 +4,8 @@
   let { children } = $props();
 </script>
 
+
+
 <svelte:head>
   <link rel="icon" href={favicon} />
   <style>
@@ -131,7 +133,7 @@
       display: flex;
       flex-flow: row nowrap;
       width: max-content;
-      animation: scroll 20s linear infinite;
+      animation: scroll 40s linear infinite;
 
       &:hover {
         animation-play-state: paused;

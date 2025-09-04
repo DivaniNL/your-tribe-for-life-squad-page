@@ -68,7 +68,7 @@
       {#each secondHalf as member}
         <li class="person-card">
             <span><p>Show item</p></span>
-            <img src={member.avatar} alt="" />
+            <img src={member.avatar} alt="foto van{member.name}" />
             <h3>{member.name}</h3>
             <a href={member.website}>github logo</a>
         </li>
@@ -77,7 +77,7 @@
       {#each secondHalf as member}
         <li class="person-card">
             <span>Show item</span>
-            <img src={member.avatar} alt="" />
+            <img src={member.avatar} alt="foto van {member.name}" />
             <h3>{member.name}</h3>
             <a href={member.website}>github logo</a>
         </li>
