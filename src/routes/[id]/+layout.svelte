@@ -12,25 +12,28 @@
 
 	<style>
 		h1 {
-			justify-self: center;
 			font-size: var(--fs-title);
 			color: var(--text-color);
+			margin: 0 0 0 1.5rem;
 		}
 
 		img {
 			border: 5px solid var(--text-color);
 			border-radius: 15px;
+			margin: 0 1.5em;
+			background-color: var(--text-color);
 		}
 
 		h2 {
 			font-size: var(--fs-section);
+			margin: 0 1.5rem 
 		}
 
 		.basic-card {
 			border: 3px solid var(--text-color);
 			box-shadow: 7px 7px 0 var(--text-color);
 			border-radius: 15px;
-			margin: 1.5em 1em;
+			margin: 1.5em calc(1em + 10px) 1.5em 1em;
 			padding: 1em;
 		}
 
@@ -87,6 +90,21 @@
 			color: var(--highlight-text);
 			font-weight: var(--fw-semib);
 		}
+		@media (min-width: 750px){
+			.grid-wrapper{
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+			h1, img, h2, .info-container{
+				grid-column: 1/1
+			}
+			.favo-slider{
+				grid-row: 2 / 6;
+    			grid-column: 2 / 2;
+			}
+
+		}
+
 	</style>
 </svelte:head>
 
