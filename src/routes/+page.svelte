@@ -40,7 +40,6 @@
       {#each firstHalf as member}
         <li class="person-card">
           <img src={member.avatar} alt="" />
-          <span>Show item</span>
           <!-- <span>{member[filteredItem]}</span> -->
           <h3>{member.name}</h3>
           <p>{member.bio}</p>
@@ -52,7 +51,6 @@
       {#each firstHalf as member}
         <li class="person-card">
           <img src={member.avatar} alt="" />
-          <span>Show item</span>
           <!-- <span>{member[filteredItem]}</span> -->
           <h3>{member.name}</h3>
           <a href={member.website}>github logo</a>
@@ -67,7 +65,6 @@
     <ul class="slider">
       {#each secondHalf as member}
         <li class="person-card">
-            <span><p>Show item</p></span>
             <img src={member.avatar} alt="foto van{member.name}" />
             <h3>{member.name}</h3>
             <a href={member.website}>github logo</a>
@@ -76,7 +73,6 @@
 
       {#each secondHalf as member}
         <li class="person-card">
-            <span>Show item</span>
             <img src={member.avatar} alt="foto van {member.name}" />
             <h3>{member.name}</h3>
             <a href={member.website}>github logo</a>

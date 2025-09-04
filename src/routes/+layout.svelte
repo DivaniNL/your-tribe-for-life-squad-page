@@ -1,4 +1,5 @@
 <script>
+  // import { COLOR } from "$env/static/private"; mag niet? geeft me error
   import favicon from "$lib/assets/favicon.svg";
 
   let { children } = $props();
@@ -125,7 +126,7 @@
       overflow: hidden;
     }
 
-    .contain:last-child .slider {
+    .contain:nth-of-type(2) .slider {
       animation-direction: reverse;
     }
 
@@ -133,10 +134,16 @@
       display: flex;
       flex-flow: row nowrap;
       width: max-content;
-      animation: scroll 40s linear infinite;
+      animation: scroll 55s linear infinite;
 
       &:hover {
         animation-play-state: paused;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .slider {
+        animation: scroll 100s linear infinite;
       }
     }
 
@@ -152,7 +159,7 @@
       color: white;
 
       &:hover {
-        background: #000000;
+        cursor:pointer;
         background: linear-gradient(
           90deg,
           rgba(0, 0, 0, 1) 12%,
@@ -161,8 +168,27 @@
 
         img {
           opacity: 0.2;
+          z-index:-1;
         }
       }
+
+      *{
+        margin-bottom:0.5em;
+      }
+    }
+
+    .person-card span{
+      background-color:#050542;
+      color:#66e5bf;
+
+      width:fit-content;
+      padding: 0.2em 0.5em;
+      border-radius:5px;
+      font-weight:bold;
+
+      position:absolute;
+      top:0.5em;
+      left:0.5em;
     }
 
     .person-card img {
@@ -176,7 +202,6 @@
 
     .person-card p {
       width: 100%;
-
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;

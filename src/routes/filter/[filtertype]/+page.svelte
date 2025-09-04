@@ -56,7 +56,7 @@
           <a href={member.website}>github logo</a>
         </li>
       {/each}
-
+  
       <!-- duplicate want anders is animatie kut (SORRY) -->
       {#each firstHalf as member}
         <li class="person-card">
@@ -70,31 +70,34 @@
 
     </ul>
   </div>
+
   {:else}
   <!-- TODO: FALLBACK -->
   {/if}
+
+
   {#if secondHalf && secondHalf.length > 0}
     <div class="contain">
       <!-- bottom slider -->
-    <ul class="slider">
-      {#each secondHalf as member}
-        <li class="person-card">
-            <span><p>Show item</p></span>
-            <img src={member.avatar} alt="foto van{member.name}" />
-            <h3>{member.name}</h3>
-            <a href={member.website}>github logo</a>
-        </li>
-      {/each}
-
-      {#each secondHalf as member}
-        <li class="person-card">
-            <span>Show item</span>
-            <img src={member.avatar} alt="foto van{member.name}" />
-            <h3>{member.name}</h3>
-            <a href={member.website}>github logo</a>
-        </li>
-      {/each}
-      </ul>
+      <ul class="slider">
+        {#each secondHalf as member}
+          <li class="person-card">
+              <span><p>Show item</p></span>
+              <img src={member.avatar} alt="foto van{member.name}" />
+              <h3>{member.name}</h3>
+              <a href={member.website}>github logo</a>
+          </li>
+        {/each}
+        
+        {#each secondHalf as member}
+          <li class="person-card">
+              <span>Show item</span>
+              <img src={member.avatar} alt="foto van{member.name}" />
+              <h3>{member.name}</h3>
+              <a href={member.website}>github logo</a>
+          </li>
+        {/each}
+        </ul>
   </div>
   {:else}
   <!-- TODO: FALLBACK -->
