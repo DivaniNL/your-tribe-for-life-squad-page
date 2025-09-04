@@ -6,9 +6,37 @@ const allowedFilters = [
     ["fav_coffee",'Koffie','<path d="M184 48C170.7 48 160 58.7 160 72C160 110.9 183.4 131.4 199.1 145.1L200.2 146.1C216.5 160.4 224 167.9 224 184C224 197.3 234.7 208 248 208C261.3 208 272 197.3 272 184C272 145.1 248.6 124.6 232.9 110.9L231.8 109.9C215.5 95.7 208 88.1 208 72C208 58.7 197.3 48 184 48zM128 256C110.3 256 96 270.3 96 288L96 480C96 533 139 576 192 576L384 576C425.8 576 461.4 549.3 474.5 512L480 512C550.7 512 608 454.7 608 384C608 313.3 550.7 256 480 256L128 256zM480 448L480 320C515.3 320 544 348.7 544 384C544 419.3 515.3 448 480 448zM320 72C320 58.7 309.3 48 296 48C282.7 48 272 58.7 272 72C272 110.9 295.4 131.4 311.1 145.1L312.2 146.1C328.5 160.4 336 167.9 336 184C336 197.3 346.7 208 360 208C373.3 208 384 197.3 384 184C384 145.1 360.6 124.6 344.9 110.9L343.8 109.9C327.5 95.7 320 88.1 320 72z">'],
     ["fav_emoji",'Emoji','<path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM229.4 385.9C249.8 413.9 282.8 432 320 432C357.2 432 390.2 413.9 410.6 385.9C418.4 375.2 433.4 372.8 444.1 380.6C454.8 388.4 457.2 403.4 449.4 414.1C420.3 454 373.2 480 320 480C266.8 480 219.7 454 190.6 414.1C182.8 403.4 185.2 388.4 195.9 380.6C206.6 372.8 221.6 375.2 229.4 385.9zM208 272C208 254.3 222.3 240 240 240C257.7 240 272 254.3 272 272C272 289.7 257.7 304 240 304C222.3 304 208 289.7 208 272zM400 240C417.7 240 432 254.3 432 272C432 289.7 417.7 304 400 304C382.3 304 368 289.7 368 272C368 254.3 382.3 240 400 240z">']
 ];
-export async function load({url}){
-    const membersReponse = await fetch('https://fdnd.directus.app/items/person/?sort=name&fields=*,squads.squad_id.name,squads.squad_id.cohort&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"FDND Jaar 2"}}}},{"squads":{"squad_id":{"cohort":"2526"}}}]}')
-    const membersReponseData = await membersReponse.json()
+const slugs = allowedFilters.map(filter => filter[0]);
+export async function load({url, params}){
+    const filtertype = params.filtertype;
+    const isValidFilter = slugs.includes(filtertype);
+    if(filtertype != '' && isValidFilter){
+        const membersReponse = await fetch(`https://fdnd.directus.app/items/person/?sort=name&fields=id,name,nickname,github_handle,website,bio,avatar,birthdate,fav_color,squads.squad_id.name,squads.squad_id.cohort,`+ filtertype +`&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"FDND Jaar 2"}}}},{"squads":{"squad_id":{"cohort":"2526"}}}]}`)
+        const membersResponseData = await membersReponse.json()
+        const members = membersResponseData.data.map(member => {
+            return ({
+                ...member,
+                filterValue: isValidFilter && member[filtertype] ? member[filtertype] : "Geen voorkeur"
+            })}
+        );
+        // split members in half
+        const splitMembers = Math.ceil(members.length / 2);
+
+        // make variable for each slide
+        const firstHalf = members.slice(0, splitMembers); //first half
+        const secondHalf = members.slice(splitMembers); //second half
+        return{members,firstHalf, secondHalf, allowedFilters}
+    }
+    else{
+        const membersResponse = await fetch(`https://fdnd.directus.app/items/person/?sort=name&fields=id,name,nickname,github_handle,website,bio,avatar,birthdate,fav_color,squads.squad_id.name,squads.squad_id.cohort&filter={"_and":[{"squads":{"squad_id":{"tribe":{"name":"FDND Jaar 2"}}}},{"squads":{"squad_id":{"cohort":"2526"}}}]}`)
+        const membersReponseData = await membersResponse.json();
+        // split members in half
+        const splitMembers = Math.ceil(members.length / 2);
+
+        // make variable for each slide
+        const firstHalf = members.slice(0, splitMembers); //first half
+        const secondHalf = members.slice(splitMembers); //second half
+        return{members: membersResponse.data,firstHalf, secondHalf, allowedFilters}
+    }
     
-    return{members: membersReponseData.data, allowedFilters}
 }

@@ -1,8 +1,9 @@
 <script>
   let { data } = $props();
+  	import { page } from '$app/state';
   const members = data.members;
   console.log(data);
-
+const filters = data.allowedFilters;
   // split members in half
   const splitMembers = Math.ceil(members.length / 2);
 
@@ -13,10 +14,23 @@
 
 <h1>FDND Squadpage</h1>
 
-<fieldset>
-  <legend>placeholder voor de "filters"</legend>
-  <a href="/">Keuze1</a>
-</fieldset>
+{#if filters && filters.length > 0}
+  <ul class="filters">
+    {#each filters as filter}
+        <li>
+          <a href={`/filter/${filter[0]}`} aria-current={page.url.pathname === `/filter/${filter[0]}`}>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">{@html filter[2]}
+              </svg>
+            </div>
+            <p>{filter[1]}</p>
+          </a>
+        </li>
+    {/each}
+  </ul>
+{:else}
+<!-- TODO: FALLBACK -->
+{/if}
 
 <!-- top slider -->
  <ul class="slider">
@@ -44,33 +58,3 @@
     {/each}
 </ul>
 
-<style>
-    ul{
-        width: auto;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-    }
-
-  .person-card {
-    position: relative;
-    max-height: 30em;
-    width: 30em;
-    overflow: hidden; /* voorkomt dat img buiten de card steekt */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 1rem;
-    color: white;
-  }
-
-  .person-card img {
-    position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0 */
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* zorgt dat de foto het vak mooi opvult */
-    z-index: -1; /* achter de content */
-  }
-</style>
