@@ -149,7 +149,13 @@ ul.filters li a div{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 10px;
+
+  box-shadow: 0 7px #ECECEC;
+  &:hover, &:focus{
+    box-shadow: 0 3px #ECECEC;
+    transform: translateY(4px);
+  }
 }
 ul.filters li a svg{
   height: 32px;
@@ -157,6 +163,7 @@ ul.filters li a svg{
 }
 ul.filters li a p{
   margin-bottom: 0;
+  margin-top: 10px;
 }
 ul.filters svg > *{
   fill: #ECECEC;
@@ -164,11 +171,20 @@ ul.filters svg > *{
 ul.filters li a[aria-current="true"] svg, ul.filters li a[aria-current="true"] svg > *{
   fill: #fffc86;
 }
+ul.filters li a[aria-current="true"] div{
+  box-shadow: 0 7px #fffc86;
+  &:hover, &:focus{
+    box-shadow: 0 3px #fffc86;
+    transform: translateY(4px);
+  }
+}
 ul.slider{
   width: auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
 .person-card {
@@ -206,6 +222,8 @@ ul.slider{
     .contain {
       width: 100vw;
       overflow: hidden;
+      display: flex;
+      flex-direction: row;
     }
 
     .contain:nth-of-type(2) .slider {
@@ -242,15 +260,69 @@ ul.slider{
 
       &:hover {
         cursor:pointer;
-        background: linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 1) 12%,
-          rgba(117, 117, 117, 1) 100%
-        );
-
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;
+          background-color: rgba(0,0,0,0.6);
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          z-index: 1;
+        }
+        .info-dialog{
+          display: block;
+          .links{
+            display: flex;
+            margin-top: 15px;
+            justify-content: space-between;
+            a{
+              margin-bottom: 0;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              p{
+                margin-bottom: 0;
+              }
+            }
+          }
+          a{
+            color: inherit;
+            text-decoration: none;
+            div{
+              width: 50px;
+              height: 50px;
+              background-color: #050542;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              svg{
+                height: 32px;
+                margin-bottom: 0;
+              }
+              svg > *{
+                fill: #ECECEC;
+              }
+            }
+            &:hover{
+              text-decoration: underline;
+              div{
+                svg{
+                  *{
+                    fill: #fffc86;
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+/* 
         img {
           opacity: 0.2;
-        }
+        } */
       }
 
       *{
@@ -270,6 +342,11 @@ ul.slider{
       position:absolute;
       top:0.5em;
       left:0.5em;
+      z-index: 2;
+    }
+    .person-card .info-dialog{
+      z-index: 2;
+      display: none;
     }
 
     .person-card img {

@@ -183,33 +183,43 @@
     {#if member.avatar}
         <img src="{member.avatar}" alt="avatar image van {member.name}" width="250" height="250">
     {/if}
-    <h2>{member.name}</h2>
-
+    {#if member.name}
+        <h2>{member.name}</h2>
+    {/if}
     <div class="info-container">
-        <article class="basic-card section-bio">
-            <h3>Bio</h3>
-            <p>{member.bio}</p>
-        </article>
-
-        <article class="basic-card user-links">
-            <h3>Links</h3>
-            <a href="https://github.com/{member.github_handle}">Github</a>
-            <a href="{member.website}">website</a>
-        </article>
+        {#if member.bio}
+            <article class="basic-card section-bio">
+                <h3>Bio</h3>
+                <p>{member.bio}</p>
+            </article>
+        {/if}
+        {#if member.github_handle || member.website}
+            <article class="basic-card user-links">
+                <h3>Links</h3>
+                {#if member.github_handle}
+                    <a href="https://github.com/{member.github_handle}">Github</a>
+                {/if}
+                {#if member.website}
+                    <a href="{member.website}">website</a>
+                {/if}
+            </article>
+        {/if}
     </div>
 
     <ul class="favo-slider">
         {#each filters as filter}
-        <li class="basic-card favo-card">
-            {#if filter[0] == "fav_country"}
-                <h3>{filter[1]}</h3>
-                <span>{DutchCountryName}</span>
-            {:else}
-                <h3>{filter[1]}</h3>
-                <span>{member[filter[0]]}</span>
-            {/if}
+        {#if member[filter[0]]}
+            <li class="basic-card favo-card">
+                {#if filter[0] == "fav_country"}
+                    <h3>{filter[1]}</h3>
+                    <span>{DutchCountryName}</span>
+                {:else}
+                    <h3>{filter[1]}</h3>
+                    <span>{member[filter[0]]}</span>
+                {/if}
 
-        </li>
+            </li>
+        {/if}
         {/each}
     </ul>
 </div>
