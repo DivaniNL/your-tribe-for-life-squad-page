@@ -368,6 +368,14 @@ ul.slider{
     .person-card a{
       z-index:999;
     }
+    .removefilter{
+      text-decoration: underline;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      display: block;
+      margin: 20px auto 0;
+    }
   </style>
 </svelte:head>
 

@@ -27,6 +27,7 @@
   
 </script>
 <h1>FDND Squadpage</h1>
+
 {#if filters && filters.length > 0}
   <ul class="filters">
     {#each filters as filter}
@@ -41,6 +42,7 @@
         </li>
     {/each}
   </ul>
+  <a  class="removefilter" href="/">Verwijder filters</a>
 {:else}
 <!-- TODO: FALLBACK -->
 {/if}
