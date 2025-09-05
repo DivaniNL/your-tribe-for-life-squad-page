@@ -17,6 +17,10 @@
     filtertype = data.filtertype;
   });
 
+  //duplicate content
+  // dit werkt maar moet nog op de rest toegepast worden
+ let doubledSecondHalf = $derived([...secondHalf, ...secondHalf]);
+
   // const members = data.members;
   // const filters = data.allowedFilters;
   // console.log(data.allowedFilters);
@@ -41,8 +45,11 @@
 <!-- TODO: FALLBACK -->
 {/if}
 
+
+<section>
 {#if members && members.length > 0}
   {#if firstHalf && firstHalf.length > 0}
+
 
   <div class="contain">
     <ul class="slider">
@@ -80,16 +87,7 @@
     <div class="contain">
       <!-- bottom slider -->
       <ul class="slider">
-        {#each secondHalf as member}
-          <li class="person-card">
-              <span><p>Show item</p></span>
-              <img src={member.avatar} alt="foto van{member.name}" />
-              <h3>{member.name}</h3>
-              <a href={member.website}>github logo</a>
-          </li>
-        {/each}
-        
-        {#each secondHalf as member}
+        {#each doubledSecondHalf as member}
           <li class="person-card">
               <span>Show item</span>
               <img src={member.avatar} alt="foto van{member.name}" />
@@ -99,12 +97,15 @@
         {/each}
         </ul>
   </div>
+
   {:else}
   <!-- TODO: FALLBACK -->
   {/if}
-{:else}
-<!-- TODO: FALLBACK -->
-{/if}
+  {:else}
+  <!-- TODO: FALLBACK -->
+  {/if}
+</section>
+
 
 
 

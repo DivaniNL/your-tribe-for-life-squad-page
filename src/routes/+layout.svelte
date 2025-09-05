@@ -53,6 +53,10 @@
       --fs-title: 3.375rem;
     }
 
+    section{
+      margin-top:5em;
+    }
+
     /*filters*/
     ul.filters {
       border-radius: 15px;
