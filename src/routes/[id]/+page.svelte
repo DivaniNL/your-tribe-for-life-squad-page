@@ -180,8 +180,11 @@
 </script>
 <div class="grid-wrapper">
     <h1>Squad 2F</h1>
-    {#if member.avatar}
-        <img src="{member.avatar}" alt="avatar image van {member.name}" width="250" height="250">
+    {#if member.mugshot}
+          <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" width=250 height=250/>
+    {:else}
+    <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width=250 height=250/>
+    
     {/if}
     {#if member.name}
         <h2>{member.name}</h2>
