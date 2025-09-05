@@ -1,9 +1,9 @@
 <script>
   let { data } = $props();
-  	import { page } from '$app/state';
+  import { page } from "$app/state";
   const members = data.members;
   console.log(data);
-const filters = data.allowedFilters;
+  const filters = data.allowedFilters;
   // split members in half
   const splitMembers = Math.ceil(members.length / 2);
 
@@ -17,44 +17,67 @@ const filters = data.allowedFilters;
 {#if filters && filters.length > 0}
   <ul class="filters">
     {#each filters as filter}
-        <li>
-          <a href={`/filter/${filter[0]}`} aria-current={page.url.pathname === `/filter/${filter[0]}`}>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">{@html filter[2]}
-              </svg>
-            </div>
-            <p>{filter[1]}</p>
-          </a>
-        </li>
+      <li>
+        <a href={`/filter/${filter[0]}`} aria-current={page.url.pathname === `/filter/${filter[0]}`}>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
+              >{@html filter[2]}
+            </svg>
+          </div>
+          <span>{filter[1]}</span>
+        </a>
+      </li>
     {/each}
   </ul>
 {:else}
-<!-- TODO: FALLBACK -->
+  <!-- TODO: FALLBACK -->
 {/if}
 
-<!-- top slider -->
- <ul class="slider">
-    {#each firstHalf as member}
-    <li class="person-card">
-      <img src={member.avatar} alt="" />
-      <span><p>Show item</p></span>
-      <!-- <span>{member[filteredItem]}</span> -->
-      <h3>{member.name}</h3>
-      <a href={member.website}>github logo</a>
-    </li>
-    {/each}
-  </ul>
+<section>
+  <!-- top slider -->
+  <div class="contain">
+    <ul class="slider">
+      {#each firstHalf as member}
+        <li class="person-card">
+          <img src={member.avatar} alt="" />
+          <!-- <span>{member[filteredItem]}</span> -->
+          <h3>{member.name}</h3>
+          <p>{member.bio}</p>
+          <a href={member.website}>github logo</a>
+        </li>
+      {/each}
 
-<!-- bottom slider -->
- 
-<ul class="slider">
-    {#each secondHalf as member}
-    <li class="person-card">
-    <span><p>Show item</p></span>
-      <img src={member.avatar} alt="" />
-      <h3>{member.name}</h3>
-      <a href={member.website}>github logo</a>
-    </li>
-    {/each}
-</ul>
+      <!-- duplicate want anders is animatie kut (SORRY) -->
+      {#each firstHalf as member}
+        <li class="person-card">
+          <img src={member.avatar} alt="" />
+          <!-- <span>{member[filteredItem]}</span> -->
+          <h3>{member.name}</h3>
+          <a href={member.website}>github logo</a>
+        </li>
+      {/each}
 
+    </ul>
+  </div>
+
+  <div class="contain">
+      <!-- bottom slider -->
+    <ul class="slider">
+      {#each secondHalf as member}
+        <li class="person-card">
+            <img src={member.avatar} alt="foto van{member.name}" />
+            <h3>{member.name}</h3>
+            <a href={member.website}>github logo</a>
+        </li>
+      {/each}
+
+      {#each secondHalf as member}
+        <li class="person-card">
+            <img src={member.avatar} alt="foto van {member.name}" />
+            <h3>{member.name}</h3>
+            <a href={member.website}>github logo</a>
+        </li>
+      {/each}
+      </ul>
+  </div>
+</section>
