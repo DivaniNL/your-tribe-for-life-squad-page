@@ -21,7 +21,8 @@ https://www.figma.com/design/VAnJoPJ1NNv5uSKrQIsjCX/Untitled?node-id=0-1&t=ruL52
 
 
 ## Animatie Naamgeving
-1. animatie naam begint altijd met: `animation`
-2. daarna beschrijven we met 1 of 2 woorden hoe de animatie op beeld komt
-3. daarna geven we aan van welke richting de animatie op beeld komt
-4. geen namen die maar voor 1 situatie te gebruiken zijn (bijvoorbeeld text-fade-out)
+1. hiervoor maken we gebruik van kebab case (een `-` na elk woord)
+2. animatie naam begint altijd met: `animation`
+3. daarna beschrijven we met 1 of 2 woorden hoe de animatie op beeld komt (`fade-in`, `fade-out`)
+4. daarna geven we aan van welke richting de animatie op beeld komt (`up`, `down`)
+5. geen namen die maar voor 1 situatie te gebruiken zijn (bijvoorbeeld text-fade-out)
