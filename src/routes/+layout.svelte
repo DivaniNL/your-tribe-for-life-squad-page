@@ -436,6 +436,22 @@
             display: block;
             margin: 20px auto 0;
         }
+
+        @keyframes fade-in-translate {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .animation-slide-in--up {
+                transform: translateY(100px);
+                opacity: 0;
+                animation: 0.3s fade-in-translate var(--delay) ease-out forwards;
+            }
+        }
+
     </style>
 </svelte:head>
 
