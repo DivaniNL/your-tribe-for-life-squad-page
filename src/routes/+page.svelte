@@ -15,6 +15,8 @@
 <h1>FDND Squadpage</h1>
 
 {#if filters && filters.length > 0}
+ <input type="checkbox" id="toggle-filter" name="toggle-filter" />
+  <label for="toggle-filter">Toon/Verberg filters</label>
   <ul class="filters">
     {#each filters as filter}
       <li>
