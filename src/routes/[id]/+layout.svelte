@@ -79,6 +79,13 @@
 			flex-direction: column;
 			align-items: center;
 			list-style: none;
+			height: min-content;
+
+			@media (min-width: 1200px){
+				&:last-child:nth-child(odd) {
+					grid-column: span 2;
+				}
+			}
 		}
 
 		.favo-card h3 {
@@ -89,6 +96,7 @@
 			font-size: var(--fs-answer);
 			color: var(--highlight-text);
 			font-weight: var(--fw-semib);
+			text-align: center;
 		}
 		@media (min-width: 750px){
 			.grid-wrapper{
@@ -101,6 +109,14 @@
 			.favo-slider{
 				grid-row: 2 / 6;
     			grid-column: 2 / 2;
+				
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				grid-template-rows: min-content min-content;
+				
+				@media (min-width: 1200px){
+					grid-template-columns: repeat(2, minmax(350px, 1fr));
+				}
 			}
 
 		}
