@@ -71,7 +71,7 @@
       {#each firstHalf as member}
         <li class="person-card">
           {#if member.mugshot}
-            <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" />
+            <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" loading="lazy" decoding="async" alt="foto van {member.name}" />
           {:else}
             <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width=250 height=250/> 
           {/if}
@@ -106,7 +106,7 @@
       {#each secondHalf as member}
         <li class="person-card">
           {#if member.mugshot}
-            <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" />
+            <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500"  loading="lazy" decoding="async" alt="foto van {member.name}" />
           {:else}
             <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width=250 height=250/> 
           {/if}
@@ -161,3 +161,33 @@
       </ul>
   </div>
 </section>
+
+<style>
+  
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-200%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(200%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .contain {
+      animation: slideInRight 1.5s  ease-out;
+    }
+
+    .contain:nth-child(2){
+     animation: slideInLeft 1.5s  ease-out;
+    }
+
+</style>
