@@ -1,8 +1,5 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
-    import { redirect, text } from '@sveltejs/kit';
-    import { nonpassive } from 'svelte/legacy';
-    import { normalizeModuleId } from 'vite/module-runner';
 
 	let { children } = $props();
 </script>
@@ -30,7 +27,7 @@
 		}
 
 		.basic-card {
-			border: 3px solid var(--text-color);
+			outline: 3px solid var(--text-color);
 			box-shadow: 7px 7px 0 var(--text-color);
 			border-radius: 15px;
 			margin: 1.5em calc(1em + 10px) 1.5em 1em;
@@ -119,6 +116,17 @@
 				}
 			}
 
+		}
+		.breadcrumbs {
+			grid-column: 1 / 1;	
+			grid-row: 2 / 2;
+			margin: 0.3em 0 0 1.5rem;
+		}
+		.breadcrumbs a{
+			color: white;
+		}
+		.breadcrumbs a[aria-current="true"]{
+			color: #fffc86
 		}
 
 	</style>
