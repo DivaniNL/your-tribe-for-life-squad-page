@@ -66,6 +66,12 @@
             margin-top: 5em;
         }
 
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         @font-face {
             font-family: "MontserratAlternates";
             src: url("/fonts/MontserratAlternates-Regular.ttf")
@@ -101,6 +107,73 @@
                 margin: 0 auto;
             }
         }
+
+        ul.filters {
+            border-radius: 15px;
+            padding: 0px;
+            row-gap: 20px;
+            background-color: #66e5bf;
+            grid-template-columns: 1fr 1fr 1fr;
+            list-style-type: none;
+            margin: 0px;
+            transform: scale(0);
+            display: grid;
+            transition: 0.2s ease;
+            height: 0;
+            opacity: 0;
+        }
+        @media (min-width: 690px) {
+            ul.filters {
+                opacity: 1;
+                display: flex;
+                gap: 50px;
+                justify-content: center;
+                padding: 20px 50px;
+                width: fit-content;
+                margin: 20px;
+                transform: scale(1);
+                padding: 20px;
+                height: fit-content !important;
+            }
+        }
+        #toggle-filter {
+            appearance: none;
+            margin-top: 10px;
+        }
+        #toggle-filter,
+        #toggle-filter + label {
+            display: block;
+            cursor: pointer;
+        }
+        #toggle-filter + label {
+            background-color: #66e5bf;
+            color: #050542;
+            padding: 10px 40px;
+            font-weight: bold;
+            border-radius: 15px;
+            border-radius: 10px;
+
+            box-shadow: 0 7px #ececec;
+            &:hover,
+            &:focus {
+                box-shadow: 0 3px #ececec;
+                transform: translateY(4px);
+            }
+        }
+        @media (min-width: 690px) {
+            #toggle-filter,
+            #toggle-filter + label {
+                display: none;
+            }
+        }
+        body:has(#toggle-filter:checked) ul.filters {
+            transform: scale(1);
+            height: 220px;
+            padding: 20px;
+            margin: 20px;
+            opacity: 1;
+        }
+
         ul.filters li {
             max-width: 120px;
         }
