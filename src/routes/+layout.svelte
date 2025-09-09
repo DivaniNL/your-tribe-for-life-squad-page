@@ -140,6 +140,7 @@
     padding: 20px 50px;
     width: fit-content;
     margin: 20px;
+    transform: scale(1);
     padding: 20px;
     height: fit-content !important;
   }
