@@ -458,11 +458,11 @@
         }
 
         ::view-transition-old(*) {
-            animation: scale-out 0.4s ease forwards;
+            animation: scale-out 1s ease forwards;
         }
 
         ::view-transition-new(*) {
-            animation: fade-in 0.4s ease forwards;
+            animation: fade-in 1s ease forwards;
         }
 
         @keyframes scale-out {
