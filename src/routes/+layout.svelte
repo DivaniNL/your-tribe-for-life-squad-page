@@ -1,8 +1,26 @@
 <script>
     // import { COLOR } from "$env/static/private"; mag niet? geeft me error
     import favicon from "$lib/assets/favicon.svg";
+    import { onNavigate } from "$app/navigation";
 
     let { children } = $props();
+
+    onNavigate((navigation) => {
+        if (!document.startViewTransition) return;
+        let viewTransitionType = "page-change";
+        if (navigation.type === "goto") {
+            return;
+        }
+        return new Promise((resolve) => {
+            document.startViewTransition({
+                update: async () => {
+                    resolve();
+                    await navigation.complete;
+                },
+                types: [viewTransitionType],
+            });
+        });
+    });
 </script>
 
 <svelte:head>
@@ -70,24 +88,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        @font-face {
-            font-family: "MontserratAlternates";
-            src: url("/fonts/MontserratAlternates-Regular.ttf")
-                format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: "MontserratAlternates";
-            src: url("/fonts/MontserratAlternates-SemiBold.ttf")
-                format("truetype");
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
         }
 
         ul.filters {
@@ -452,6 +452,41 @@
             }
         }
 
+        /* view transition */
+        @view-transition {
+            navigation: auto;
+        }
+
+        ::view-transition-old(*) {
+            animation: scale-out 0.4s ease forwards;
+        }
+
+        ::view-transition-new(*) {
+            animation: fade-in 0.4s ease forwards;
+        }
+
+        @keyframes scale-out {
+            to {
+                scale: 0;
+            }
+        }
+
+        @keyframes fade-in {
+            to {
+                opacity: 1;
+            }
+        }
+
+        ::view-transition-group(*) {
+            animation-duration: 1.3s;
+            animation-timing-function: linear(
+                0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%,
+                0.938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159,
+                1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%,
+                1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%,
+                0.997 69.8%, 1.003 76.9%, 1.004 83.8%,1
+            );
+        }
     </style>
 </svelte:head>
 

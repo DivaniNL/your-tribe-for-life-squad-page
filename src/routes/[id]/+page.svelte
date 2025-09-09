@@ -178,6 +178,7 @@
     let DutchCountryName = countryNamesNL[member["fav_country"]];
     console.log(DutchCountryName)
 </script>
+
 <div class="grid-wrapper">
     {#if member.name}
         <h1>{member.name}</h1>
@@ -186,7 +187,7 @@
         <p><a href="/" class="home-link" aria-current="false">Squad 2F</a> &gt; <a href="#" class="detail-link" aria-current="true">{member.name}</a></p>
     </section>
     {#if member.mugshot}
-          <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" width=250 height=250/>
+        <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" width=250 height=250 style="view-transition-name: person-{member.id}"/>
     {:else}
     <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width=250 height=250/>
     
