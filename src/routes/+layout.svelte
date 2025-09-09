@@ -309,8 +309,8 @@
 
     .person-card {
       position: relative;
-      height:8em;
-      width:10em;
+      height:10em;
+      width:12em;
 
       display: flex;
       flex-direction: column;
@@ -390,10 +390,10 @@
       }
     }
 
-    @media screen (min-width:900px){
+    @media (min-width:900px){
       .person-card{
-        height:10em;
-        width:12em;
+        height:18em;
+        width:22em;
       }
     }
 
