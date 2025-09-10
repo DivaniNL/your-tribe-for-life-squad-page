@@ -200,7 +200,7 @@
             </article>
         {/if}
         {#if member.github_handle || member.website}
-            <article class="basic-card user-links animation-slide-in--up" style="--delay: 0.2s;">
+            <article class="basic-card user-links animation-slide-in--up" style="--delay: 0.05s;">
                 <h3>Links</h3>
                 {#if member.github_handle}
                     <a href="https://github.com/{member.github_handle}">Github</a>
@@ -215,7 +215,7 @@
     <ul class="favo-slider">
         {#each filters as filter,i}
         {#if member[filter[0]]}
-            <li class="basic-card favo-card animation-slide-in--up" style="--delay: {i * 0.2 + 0.2}s;">
+            <li class="basic-card favo-card animation-slide-in--up" style="--delay: {i * 0.05 + 0.05}s;">
                 {#if filter[0] == "fav_country"}
                     <h3>{filter[1]}</h3>
                     <span>{DutchCountryName}</span>
