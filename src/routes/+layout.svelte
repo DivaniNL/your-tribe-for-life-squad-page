@@ -285,7 +285,6 @@
       flex-direction: row;
     }
 
-
     .contain:nth-of-type(2) .slider {
       animation-direction: reverse;
     }
@@ -295,7 +294,7 @@
       flex-flow: row nowrap;
       width: max-content;
       animation: scroll 55s linear infinite;
-      
+
       &:hover {
         animation-play-state: paused;
       }
@@ -309,18 +308,24 @@
 
     .person-card {
       position: relative;
-      height:10em;
-      width:12em;
+      height: 10em;
+      width: 12em;
 
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 1rem;
-      color: white;
+
+      padding: 1em;
+      color: #fff;
 
       &:hover {
         cursor: pointer;
         position: relative;
+
+        .info-dialog{
+          opacity:1;
+        }
+
         &:after {
           content: "";
           position: absolute;
@@ -331,69 +336,17 @@
           left: 0;
           z-index: 1;
         }
-        .info-dialog {
-          display: block;
-          .links {
-            display: flex;
-            margin-top: 15px;
-            justify-content: space-between;
-            a {
-              margin-bottom: 0;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              p {
-                margin-bottom: 0;
-              }
-            }
-          }
-          a {
-            color: inherit;
-            text-decoration: none;
-            div {
-              width: 50px;
-              height: 50px;
-              background-color: #050542;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border-radius: 50%;
-              svg {
-                height: 32px;
-                margin-bottom: 0;
-              }
-              svg > * {
-                fill: #ececec;
-              }
-            }
-            &:hover {
-              text-decoration: underline;
-              div {
-                svg {
-                  * {
-                    fill: #fffc86;
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        /* 
+        
         img {
-          opacity: 0.2;
-        } */
-      }
-
-      * {
-        margin-bottom: 0.5em;
+          opacity:1;
+        }
       }
     }
 
-    @media (min-width:900px){
-      .person-card{
-        height:18em;
-        width:22em;
+    @media (min-width: 650px) {
+      .person-card {
+        height: 18em;
+        width: 22em;
       }
     }
 
@@ -411,9 +364,59 @@
       left: 0.5em;
       z-index: 2;
     }
+
     .person-card .info-dialog {
       z-index: 2;
-      display: none;
+      opacity: 0;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      
+      div {
+        height:2em;
+        width:auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        svg {
+          height: 100%;
+          width:auto;
+          fill: #ececec;
+        }
+
+      }
+
+      &:hover {
+        text-decoration: underline;
+
+        div {
+
+          svg {
+
+            * {
+              fill: #fffc86;
+            }
+            
+          }
+
+        }
+      }
     }
 
     .person-card img {
