@@ -189,7 +189,7 @@
     {#if member.mugshot}
         <img class="animation-fade-in" src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" width=250 height=250 style="view-transition-name: person-{member.id}"/>
     {:else}
-    <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width=250 height=250/>
+    <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width=250 height=250 style="view-transition-name: person-{member.id}"/>
     
     {/if}
 
