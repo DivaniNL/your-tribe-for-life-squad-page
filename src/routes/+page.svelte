@@ -110,7 +110,7 @@
           {/if}
           <div class="info-dialog">
             <h3>{member.name}</h3>
-            <p>{member.bio}</p>
+            <p class="member-bio">{member.bio}</p>
             <div class="links">
               <a href={member.website}>
                 <div>
