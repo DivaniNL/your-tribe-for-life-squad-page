@@ -19,7 +19,8 @@
 
   //duplicate content
   // dit werkt maar moet nog op de rest toegepast worden
- let doubledSecondHalf = $derived([...secondHalf, ...secondHalf]);
+  let doubledFirstHalf = $derived([...firstHalf, ...firstHalf]);
+  let doubledSecondHalf = $derived([...secondHalf, ...secondHalf]);
 
   // const members = data.members;
   // const filters = data.allowedFilters;
@@ -54,20 +55,27 @@
 {#if members && members.length > 0}
   {#if firstHalf && firstHalf.length > 0}
 
-
   <div class="contain">
     <ul class="slider">
       {#each firstHalf as member}
         <li class="person-card">
-          {#if member.mugshot}
-            <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" />
+           {#if member.mugshot}
+            <img
+              src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500"
+              alt="foto van {member.name}"
+            />
           {:else}
-            <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE"/> 
+            <img
+              src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4"
+              alt="MONKE"
+              width="250"
+              height="250"
+            />
           {/if}
           <span style="border: 2px solid {member.fav_color}">{member.filterValue}</span>
           <div class="info-dialog">
             <h3>{member.name}</h3>
-            <p>{member.bio}</p>
+            <p class="member-bio">{member.bio}</p>
             <div class="links">
               <a href={member.website}>
                 <div>
@@ -105,15 +113,23 @@
           <li class="person-card">
             <span style="border: 2px solid {member.fav_color}">{member.filterValue}</span>
         
-            {#if member.mugshot}
-            <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" />
-            {:else}
-            <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width=250 height=250/> 
-            {/if}
+             {#if member.mugshot}
+            <img
+              src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500"
+              alt="foto van {member.name}"
+            />
+          {:else}
+            <img
+              src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4"
+              alt="MONKE"
+              width="250"
+              height="250"
+            />
+          {/if}
           
             <div class="info-dialog">
               <h3>{member.name}</h3>
-              <p>{member.bio}</p>
+              <p class="member-bio">{member.bio}</p>
               
               <div class="links">
                 <a href={member.website}>
@@ -146,6 +162,7 @@
   {:else}
   <!-- TODO: FALLBACK -->
   {/if}
+
 </section>
 
 

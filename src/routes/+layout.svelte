@@ -51,6 +51,7 @@
       --fw-semib: 600;
 
       /* font size */
+      --fs-small: 0.8rem;
       --fs-reg: 1rem;
       --fs-answer: 1.75rem;
       --fs-section: 2rem;
@@ -236,35 +237,38 @@
       }
     }
 
-    ul.slider {
-      width: auto;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      flex-wrap: nowrap;
-      flex-direction: row;
+    .removefilter {
+      text-decoration: underline;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      display: block;
+      margin: 20px auto 0;
     }
 
     .person-card {
       position: relative;
+
       max-height: 30em;
       width: 30em;
+
       overflow: hidden; /* voorkomt dat img buiten de card steekt */
 
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+
       padding: 1rem;
       color: white;
     }
 
     .person-card img {
       position: absolute;
-      inset: 0; /* top:0; right:0; bottom:0; left:0 */
+      inset: 0; 
       width: 100%;
       height: 100%;
-      object-fit: cover; /* zorgt dat de foto het vak mooi opvult */
-      z-index: -1; /* achter de content */
+      object-fit: cover; 
+      z-index: -1; 
     }
 
     /* animations */
@@ -343,10 +347,12 @@
       }
     }
 
-    @media (min-width: 650px) {
+    @media (min-width: 750px) {
       .person-card {
         height: 18em;
         width: 22em;
+
+        transition: all ;
       }
     }
 
@@ -365,9 +371,23 @@
       z-index: 2;
     }
 
-    .person-card .info-dialog {
+    .info-dialog {
       z-index: 2;
       opacity: 0;
+    }
+
+    .info-dialog h3{
+      font-size: 1em;
+    }
+
+    .member-bio{
+      margin: 0.5em 0;
+
+      font-size:0.8em;
+      width: 99%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .links {
@@ -378,6 +398,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+      }
+
+      p{
+        font-size:0.6em;
       }
     }
 
@@ -392,7 +416,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
 
         svg {
           height: 100%;
@@ -428,25 +451,23 @@
       background-position: 50% 50%;
     }
 
-    .person-card p {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
     .person-card a {
       z-index: 999;
     }
-    .removefilter {
-      text-decoration: underline;
-      color: white;
-      font-size: 18px;
-      text-align: center;
-      display: block;
-      margin: 20px auto 0;
+
+    @media (min-width:700px){
+      .info-dialog h3{
+        font-size:1.2em;
+      }
+
+      .member-bio{
+        margin: 0.2em 0;
+        font-size:1em;
+      }
     }
+
   </style>
+
 </svelte:head>
 
 {@render children?.()}
