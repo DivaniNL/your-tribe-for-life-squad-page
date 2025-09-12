@@ -196,7 +196,7 @@
         {#if member.bio}
             <article class="basic-card section-bio">
                 <h2>Bio</h2>
-                <p>{member.bio}</p>
+                <p>{@html member.bio}</p>
             </article>
         {/if}
         {#if member.github_handle || member.website}
