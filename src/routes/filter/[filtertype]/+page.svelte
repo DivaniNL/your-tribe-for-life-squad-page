@@ -57,7 +57,7 @@
 
   <div class="contain">
     <ul class="slider">
-      {#each firstHalf as member}
+      {#each doubledFirstHalf as member}
         <li class="person-card">
            {#if member.mugshot}
             <img
