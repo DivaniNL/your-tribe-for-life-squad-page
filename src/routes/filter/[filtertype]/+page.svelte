@@ -60,9 +60,9 @@
       {#each firstHalf as member}
         <li class="person-card">
           {#if member.mugshot}
-            <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" />
+            <img class="animation-fade-in" src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" style="view-transition-name: person-{member.id}"/>
           {:else}
-            <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE"/> 
+            <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" style="view-transition-name: person-{member.id}"/>
           {/if}
           <span style="border: 2px solid {member.fav_color}">{member.filterValue}</span>
           <div class="info-dialog">
@@ -133,9 +133,9 @@
           <li class="person-card">
             <span style="border: 2px solid {member.fav_color}">{member.filterValue}</span>
           {#if member.mugshot}
-            <img src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" />
+            <img class="animation-scale-out" src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" style="view-transition-name: person-{member.id}"/>
           {:else}
-            <img src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width=250 height=250/> 
+            <img class="animation-scale-out" src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width=250 height=250 style="view-transition-name: person-{member.id}"/> 
           {/if}
             <div class="info-dialog">
               <h3>{member.name}</h3>

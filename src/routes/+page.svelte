@@ -10,6 +10,7 @@
   // make variable for each slide
   const firstHalf = members.slice(0, splitMembers); //first half
   const secondHalf = members.slice(splitMembers); //second half
+
 </script>
 
 <h1>FDND Squadpage</h1>
