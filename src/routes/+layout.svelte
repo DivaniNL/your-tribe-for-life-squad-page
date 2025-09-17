@@ -71,6 +71,7 @@
             --fw-semib: 600;
 
             /* font size */
+            --fs-small: 0.8rem;
             --fs-reg: 1rem;
             --fs-answer: 1.75rem;
             --fs-section: 2rem;
@@ -78,6 +79,9 @@
 
             font-family: "MontserratAlternates";
             font-weight: var(--fw-reg);
+
+            overflow-x: hidden;
+            /*fixed animations scrollbar*/
         }
 
         section {
@@ -91,37 +95,33 @@
         }
 
         ul.filters {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap: 20px;
+
             border-radius: 15px;
             padding: 20px;
-            row-gap: 20px;
             background-color: #66e5bf;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
             list-style-type: none;
-            @media (min-width: 550px) {
-                display: flex;
-                gap: 50px;
-                justify-content: center;
-                padding: 20px 50px;
-                width: fit-content;
-                margin: 0 auto;
-            }
-        }
 
-        ul.filters {
-            border-radius: 15px;
-            padding: 0px;
-            row-gap: 20px;
-            background-color: #66e5bf;
-            grid-template-columns: 1fr 1fr 1fr;
-            list-style-type: none;
-            margin: 0px;
             transform: scale(0);
-            display: grid;
             transition: 0.2s ease;
             height: 0;
             opacity: 0;
+
+            @media (min-width: 550px) {
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+                
+                margin: 0 auto;
+                padding: 20px 50px;
+                width: fit-content;
+                
+            }
+            
         }
+
         @media (min-width: 690px) {
             ul.filters {
                 opacity: 1;
@@ -136,6 +136,7 @@
                 height: fit-content !important;
             }
         }
+
         #toggle-filter {
             appearance: none;
             margin-top: 10px;
@@ -237,38 +238,41 @@
             }
         }
 
-        ul.slider {
-            width: auto;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            flex-wrap: nowrap;
-            flex-direction: row;
+        .removefilter {
+            text-decoration: underline;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            display: block;
+            margin: 20px auto 0;
         }
 
         .person-card {
             position: relative;
+
             max-height: 30em;
             width: 30em;
+
             overflow: hidden; /* voorkomt dat img buiten de card steekt */
 
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+
             padding: 1rem;
             color: white;
         }
 
         .person-card img {
             position: absolute;
-            inset: 0; /* top:0; right:0; bottom:0; left:0 */
+            inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* zorgt dat de foto het vak mooi opvult */
-            z-index: -1; /* achter de content */
+            object-fit: cover;
+            z-index: -1;
         }
 
-        /* animation */
+        /* animations */
         @keyframes scroll {
             from {
                 transform: translateX(0);
@@ -309,18 +313,24 @@
 
         .person-card {
             position: relative;
-            height: 17em;
-            width: 22em;
+            height: 10em;
+            width: 12em;
 
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 1rem;
-            color: white;
+
+            padding: 1em;
+            color: #fff;
 
             &:hover {
                 cursor: pointer;
                 position: relative;
+
+                .info-dialog {
+                    opacity: 1;
+                }
+
                 &:after {
                     content: "";
                     position: absolute;
@@ -331,62 +341,19 @@
                     left: 0;
                     z-index: 1;
                 }
-                .info-dialog {
-                    display: block;
-                    .links {
-                        display: flex;
-                        margin-top: 15px;
-                        justify-content: space-between;
-                        a {
-                            margin-bottom: 0;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            p {
-                                margin-bottom: 0;
-                            }
-                        }
-                    }
-                    a {
-                        color: inherit;
-                        text-decoration: none;
-                        div {
-                            width: 50px;
-                            height: 50px;
-                            background-color: #050542;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            border-radius: 50%;
-                            svg {
-                                height: 32px;
-                                margin-bottom: 0;
-                            }
-                            svg > * {
-                                fill: #ececec;
-                            }
-                        }
-                        &:hover {
-                            text-decoration: underline;
-                            div {
-                                svg {
-                                    * {
-                                        fill: #fffc86;
-                                    }
-                                }
-                            }
-                        }
-                    }
+
+                img {
+                    opacity: 1;
                 }
-
-                /* 
-        img {
-          opacity: 0.2;
-        } */
             }
+        }
 
-            * {
-                margin-bottom: 0.5em;
+        @media (min-width: 750px) {
+            .person-card {
+                height: 18em;
+                width: 22em;
+
+                transition: all;
             }
         }
 
@@ -404,9 +371,71 @@
             left: 0.5em;
             z-index: 2;
         }
-        .person-card .info-dialog {
+
+        .info-dialog {
             z-index: 2;
-            display: none;
+            opacity: 0;
+        }
+
+        .info-dialog h3 {
+            font-size: 1em;
+        }
+
+        .member-bio {
+            margin: 0.5em 0;
+
+            font-size: 0.8em;
+            width: 99%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+
+            a {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            p {
+                font-size: 0.6em;
+            }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            div {
+                height: 2em;
+                width: auto;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    height: 100%;
+                    width: auto;
+                    fill: #ececec;
+                }
+            }
+
+            &:hover {
+                text-decoration: underline;
+
+                div {
+                    svg {
+                        * {
+                            fill: #fffc86;
+                        }
+                    }
+                }
+            }
         }
 
         .person-card img {
@@ -418,11 +447,19 @@
             background-position: 50% 50%;
         }
 
-        .person-card p {
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+        .person-card a {
+            z-index: 999;
+        }
+
+        @media (min-width: 700px) {
+            .info-dialog h3 {
+                font-size: 1.2em;
+            }
+
+            .member-bio {
+                margin: 0.2em 0;
+                font-size: 1em;
+            }
         }
 
         .person-card a {
@@ -491,5 +528,6 @@
         }
     </style>
 </svelte:head>
-
-{@render children?.()}
+<main>
+    {@render children?.()}
+</main>
