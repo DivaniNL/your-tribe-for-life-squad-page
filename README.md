@@ -1,4 +1,14 @@
+# Team Squad Page
 
+## Inhoudsopgave
+
+  * [Installatie](#Installatie)
+  * [Omschrijving van het project](#Omschrijving-van-het-project)
+  * [Ontwerpkeuzes uitleggen](#Ontwerpkeuzes-uitleggen)
+  * [Functionaliteiten uitleg](#Functionaliteiten-uitleg)
+  * [Uitleg van code](#Uitleg-van-code)
+  * [Bronnen](#bronnen)
+  * [Licentie](#licentie)
 
 
 ## Installatie
@@ -13,3 +23,11 @@ Hier moet je dan eerst ```npm install``` uitvoeren in de terminal.
 
 als dat af is kan je het project op localhost opstarten met:
 ```npm run dev```
+
+
+## Omschrijving van het project
+
+## Ontwerpkeuzes uitleggen
+
+## Functionaliteiten uitleg
+
