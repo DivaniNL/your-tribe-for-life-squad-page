@@ -86,7 +86,7 @@
             margin-top: 5em;
         }
 
-        body {
+        main {
             display: flex;
             flex-direction: column;
             align-items: center;
