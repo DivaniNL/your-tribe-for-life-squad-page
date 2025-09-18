@@ -373,7 +373,9 @@
             left: 0.5em;
             z-index: 2;
         }
-
+        h1{
+            margin-top: 1rem;
+        }
         .info-dialog {
             z-index: 2;
             opacity: 0;
