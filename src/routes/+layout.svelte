@@ -107,7 +107,7 @@
             height: 0;
             opacity: 0;
 
-            @media (min-width: 550px) {
+            @media (min-width: 650px) {
                 display: flex;
                 justify-content: center;
                 gap: 50px;
@@ -115,12 +115,13 @@
                 margin: 0 auto;
                 padding: 20px 50px;
                 width: fit-content;
+                height: fit-content !important;
                 
             }
             
         }
 
-        @media (min-width: 690px) {
+        @media (min-width: 650px) {
             ul.filters {
                 opacity: 1;
                 display: flex;
@@ -161,7 +162,7 @@
                 transform: translateY(4px);
             }
         }
-        @media (min-width: 690px) {
+        @media (min-width: 650px) {
             #toggle-filter,
             #toggle-filter + label {
                 display: none;
