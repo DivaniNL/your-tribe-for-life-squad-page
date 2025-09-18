@@ -5,7 +5,12 @@
 <!-- class="animation-scale-out" -->
 <li class="person-card">
     {#if member.mugshot}
-        <img class="animation-scale-out" src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" style="view-transition-name: person-{member.id}" >
+        <picture>
+            <source type="image/avif" srcset="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500&format=avif">
+            <source type="image/webp" srcset="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500&format=webp">
+            <!-- als member.id gelijk is aan 30 dan krijgt die img fetch priority high -->
+            <img class="animation-scale-out" src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" style="view-transition-name: person-{member.id}" { ...(member.id === 30 ? { fetchpriority: 'high' } : {}) }>
+        </picture>
     {:else}
         <img class="animation-scale-out" src="https://avatars.githubusercontent.com/u/89637532?s=200&v=4" alt="MONKE" width="250" height="250" style="view-transition-name: person-{member.id}" >
      {/if}
