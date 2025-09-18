@@ -62,18 +62,22 @@
     @keyframes slideInLeft {
         from {
             transform: translateX(-200%);
+            opacity: 0;
         }
         to {
             transform: translateX(0);
+            opacity: 1;
         }
     }
 
     @keyframes slideInRight {
         from {
             transform: translateX(200%);
+            opacity: 0;
         }
         to {
             transform: translateX(0);
+            opacity: 1;
         }
     }
 
