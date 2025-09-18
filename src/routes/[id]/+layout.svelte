@@ -22,6 +22,7 @@
 
 		.breadcrumbs a{
 			color: white;
+			text-decoration: underline;
 		}
 
 		.breadcrumbs a[aria-current="true"]{
@@ -38,7 +39,7 @@
 
 		h2 {
 			font-size: var(--fs-section);
-			margin: 0 1.5rem 
+			margin: 0
 		}
 
 		.basic-card {

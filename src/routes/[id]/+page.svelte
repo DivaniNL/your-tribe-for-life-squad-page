@@ -13,7 +13,7 @@
     <div class="breadcrumbs">
         <p>
             <a href="/" class="home-link" aria-current="false">Squad 2F</a> &gt;
-            <a href="#" class="detail-link" aria-current="true">{member.name}</a>
+            <span class="detail-link" aria-current="true">{member.name}</span>
         </p>
     </div>
 
