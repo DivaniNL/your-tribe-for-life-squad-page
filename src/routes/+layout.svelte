@@ -2,6 +2,7 @@
     // import { COLOR } from "$env/static/private"; mag niet? geeft me error
     import favicon from "$lib/assets/favicon.svg";
     import { onNavigate } from "$app/navigation";
+    import '$lib/assets/styleguide.css';
 
     let { children } = $props();
 
@@ -25,63 +26,10 @@
 
 <svelte:head>
     <link rel="icon" href={favicon}>
+    <link rel="preload" href="src/lib/fonts/MontserratAlternates-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="src/lib/fonts/MontserratAlternates-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+
     <style>
-        @font-face {
-            font-family: "MontserratAlternates";
-            src: url("/fonts/MontserratAlternates-Regular.ttf") format("truetype");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: "MontserratAlternates";
-            src: url("/fonts/MontserratAlternates-SemiBold.ttf") format("truetype");
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        /*reset*/
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            object-fit: cover;
-            font-family: "MontserratAlternates", sans-serif;
-        }
-
-        html {
-            background-color: #050542;
-            color: #66e5bf;
-        }
-
-        body {
-            /* colors */
-            --bg-dark: #050542;
-            --bg-gray: #ececec;
-            --text-color: #66e5bf;
-            --highlight-text: #a675f5;
-            --active-btn: #fffc86;
-
-            /* font weight */
-            --fw-reg: 400;
-            --fw-semib: 600;
-
-            /* font size */
-            --fs-small: 0.8rem;
-            --fs-reg: 1rem;
-            --fs-answer: 1.75rem;
-            --fs-section: 2rem;
-            --fs-title: 3.375rem;
-
-            font-family: "MontserratAlternates";
-            font-weight: var(--fw-reg);
-
-            overflow-x: hidden;
-            /*fixed animations scrollbar*/
-        }
-
         section {
             margin-top: 5em;
         }
