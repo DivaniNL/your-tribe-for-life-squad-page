@@ -33,6 +33,7 @@
 			border-radius: 15px;
 			margin: 1em 1.5em;
 			background-color: var(--text-color);
+			width: min-content;
 		}
 
 		h2 {
@@ -109,12 +110,13 @@
 			font-weight: var(--fw-semib);
 			text-align: center;
 		}
+
 		@media (min-width: 750px){
 			.grid-wrapper{
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 			}
-			h1, img, h2, .info-container{
+			h1, picture, img, h2, .info-container{
 				grid-column: 1/1
 			}
 			.favo-slider{
