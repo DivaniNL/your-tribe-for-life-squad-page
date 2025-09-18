@@ -117,6 +117,7 @@
 			}
 
 		}
+
 		.breadcrumbs {
 			grid-column: 1 / 1;	
 			grid-row: 2 / 2;
