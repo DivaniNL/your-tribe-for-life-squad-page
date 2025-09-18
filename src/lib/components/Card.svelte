@@ -8,7 +8,7 @@
       class="animation-scale-out"
       src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500"
       alt="foto van {member.name}" style="view-transition-name: person-{member.id}"
-    />
+    >
   {:else}
     <img
       class="animation-scale-out"
@@ -16,7 +16,7 @@
       alt="MONKE"
       width="250"
       height="250" style="view-transition-name: person-{member.id}"
-    />
+    >
   {/if}
 
   {#if member.filterValue}

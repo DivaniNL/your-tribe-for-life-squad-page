@@ -15,7 +15,7 @@
       <ul class="slider">
         {#each firstHalf as member}
           <li class="person-card">
-            <img src={member.avatar} alt="" />
+            <img src={member.avatar} alt="">
             <span>Show item</span>
             <!-- <span>{member[filteredItem]}</span> -->
             <h3>{member.name}</h3>
@@ -27,7 +27,7 @@
         <!-- duplicate want anders is animatie kut (SORRY) -->
         {#each firstHalf as member}
           <li class="person-card">
-            <img src={member.avatar} alt="" />
+            <img src={member.avatar} alt="">
             <span>Show item</span>
             <!-- <span>{member[filteredItem]}</span> -->
             <h3>{member.name}</h3>
@@ -46,7 +46,7 @@
         {#each secondHalf as member}
           <li class="person-card">
             <span><p>Show item</p></span>
-            <img src={member.avatar} alt="foto van{member.name}" />
+            <img src={member.avatar} alt="foto van{member.name}">
             <h3>{member.name}</h3>
             <a href={member.website}>github logo</a>
           </li>
@@ -55,7 +55,7 @@
         {#each secondHalf as member}
           <li class="person-card">
             <span>Show item</span>
-            <img src={member.avatar} alt="foto van{member.name}" />
+            <img src={member.avatar} alt="foto van{member.name}">
             <h3>{member.name}</h3>
             <a href={member.website}>github logo</a>
           </li>

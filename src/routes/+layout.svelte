@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-    <link rel="icon" href={favicon} />
+    <link rel="icon" href={favicon}>
     <style>
         @font-face {
             font-family: "MontserratAlternates";

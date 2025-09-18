@@ -21,19 +21,14 @@
 <h1>FDND Squadpage</h1>
 
 {#if filters && filters.length > 0}
-  <input type="checkbox" id="toggle-filter" name="toggle-filter" />
+  <input type="checkbox" id="toggle-filter" name="toggle-filter">
   <label for="toggle-filter">Toon/Verberg filters</label>
   <ul class="filters">
     {#each filters as filter}
       <li>
-        <a
-          href={`/filter/${filter[0]}`}
-          aria-current={page.url.pathname === `/filter/${filter[0]}`}
-        >
+        <a href={`/filter/${filter[0]}`} aria-current={page.url.pathname === `/filter/${filter[0]}`} >
           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
-              >{@html filter[2]}
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" >{@html filter[2]}</svg>
           </div>
           <p>{filter[1]}</p>
         </a>
