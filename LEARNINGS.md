@@ -1,74 +1,72 @@
 # Inzichten uit dit project
 
-## Teamvragen ronde
+## Kampvuursessie
 
+## Teamvragen ronde
 - Hoe ging de samenwerking?
-  - begin gest wel gied en snel een idee wat we wouden, vaak samen gekomen. goed bereikbaar, niet vervelend om issues aan te wijzen.
-  - soms issues lan blijven staan
-  - goede communicatie
-  - stand ups houden volgende keer
+  - Het begin ging goed: we hadden snel een idee van wat we wilden maken. We zijn vaak samengekomen, waren goed bereikbaar en het was nooit vervelend om elkaar op issues te wijzen.
+  - Soms bleven issues wat langer openstaan
+  - De communicatie verliep goed
+  - Deze keer hebben we bijna geen stand-ups gehouden
 
 
 - Hebben we de doelen behaald die in ons teamcanvas staat?
   - algemeen
-    - meer geleerd over svelte
-    - nog niet echt met deadlines gewerkt
-  - indiv
-    - Dylan: ja weet alleen niet meer wat nieuwe manier van samenwerken was
-    - Colin: alle goals gehaald. vergeten wat samenwerking doel was
-    - Viresh: JS en ILW niet opgepakt, derest van de wel behaald.
-
-
+    - Ik heb meer geleerd over Svelte
+    - We hebben nog niet echt met deadlines gewerkt (voor wanneer een issue afgerond moet zijn)
+  - individueel
+    - Dylan: ik weet alleen niet meer wat de nieuwe manier van samenwerken was
+    - Colin: alle goals gehaald, maar vergeten wat het samenwerkingsdoel was
+    - Viresh: Geen tijd gemaakt om te werken aan JS en ILW, de rest van de doelen zijn wel behaald
 - Wat zouden we de volgende keer beter willen doen als team?
-  - deadlines voor issues & pull requests zetten
-
+  - Deadlines maken voor issues en pull requests
 - Welke code conventies hebben we toegepast?
-  - de code conventies van FDND en zelfbedachte animatie conventies
+  - De codeconventies van FDND en de zelfbedachte animatie code conventies
  
 
 ## Individuele feedback
 Geef feedback aan teamleden
 
-- Dylan: 
+### Feedback aan Dylan: 
   - Hoe heb je mij als teamlid ervaren
-    -  van Viresh: het was fijn om met je samen te werken. je was snel klaar met je issues waardoor ik nooit hoefde te wachten, dat vond ik fijn om te ervaren
-    -  van Colin: fijn vaak breikbaar, lekker samen werken. primna samen werking
+    -  Van Viresh: het was fijn om met je samen te werken. Je was snel klaar met je issues, waardoor ik nooit hoefde te wachten om verder te gaan met mijn taken, dat vond ik prettig om te ervaren
+    -  Van Colin: fijn, vaak bereikbaar en prettig om samen te werken.
   - Welke tips heb je voor mij
-    - Van Colin & Viresh: projectboard bijhouden
+    - Van Colin & Viresh: zorg ervoor dat het projectboard goed wordt bijgehouden (issues aan jezelf assigned wanneer je ze oppakt en issues naar de juiste kolommen verplaatst)
   - Wat zou ik moeten veranderen om prettiger samen te werken
-    - Van Colin & viresh: voordat je gaat werken even naar je planning en de team op de hoogte houden waarmee je bezig bent.
+    - Van Colin & Viresh: voordat je begint met werken, even je planning bekijken en het team op de hoogte houden waarmee je bezig bent.
   - Waar ben je trots op?
-    - Colin: hoe je verantwoordelijkheid
-    - Viresh: 
+    - Colin: hoe je verantwoordelijkheid neemt
+    - Viresh: hoe je altijd bereid bent om te helpen wanneer iemand je om hulp vraagt
 
 
-- Colin: 
+### Feedback aan Colin: 
   - Hoe heb je mij als teamlid ervaren
-    - Dylan: goed bereikbaar, liet weten als je iets niet goed vond(goed kritisch)
-    - Viresh: je werkt vlot, houd team niet op, als je vast zit meld je het optijkd en hoe je dat gaat aanpakken
+    - Dylan: goed bereikbaar en liet weten wanneer je iets niet goed vond (goed kritisch)
+    - Viresh: je werkt vlot en houdt het team niet op. Als je vastloopt, meld je dit tijdig en geef je aan hoe je het gaat aanpakken.
   - Welke tips heb je voor mij
-    - Dylan: meer branches maken, issue nr in branch vermelden
-    - Viresh: je had een groote issue die je actief vragen voor hulp
+    - Dylan: maak meer branches en vermeld het issue nummer in de branchnaam
+    - Viresh: je had een groot issue. Je gaf aan wanneer je vastzat en hoe je het wilde aanpakken, maar je vroeg niet actief om hulp of om het issue op te splitsen omdat het te groot was.
   - Wat zou ik moeten veranderen om prettiger samen te werken
-    - Dylan & Viresh: vaker melden waaarmee je bezig bent
+    - Dylan & Viresh: vaker melden waarmee je bezig bent. Zo meldde je bijvoorbeeld één keer pas dat je de CSS had gerefactored, nadat het al gedaan was
   - Waar ben je trots op?
-    - Dylan: je slider en slider animatie oplossing
-    - Viresh: dat je je slider helemaas zelf hebt kunnen afmaken
+    - Dylan: goed werk geleverd met je slider en de bijbehorende slider animatie
+    - Viresh: dat je je slider van begin tot eind zelf hebt kunnen aanpakken en afmaken
 
 
-- Viresh: 
+### Feedback aan Viresh: 
   - Hoe heb je mij als teamlid ervaren
-    - Dylan: uitzoeken hoe iets werkt, vinding rijkheid
-    - Colin: netjes, goede pull request dingern op orde. aaanwezig
+    - Dylan: goed in het uitzoeken hoe iets werkt en toont vindingrijkheid
+    - Colin: schrijft nette code, maakt goede pull requests en is altijd aanwezig
   - Welke tips heb je voor mij
-    - Dylan: meer m,et design experimenteren, vaak hetzelfde (creative met colors)
-    - Colin: een pull request die te lang open stond (teamleden meer aanspreken als het nodig is)
+    - Dylan: meer experimenteren met design, nu vaak hetzelfde, zoals dezelfde kleuren, borders en vormen (vierkantjes/figuren).
+    - Colin: een pull request stond te lang open, zorg dat je zulke zaken sneller afrondt. En spreek teamleden meer aan wanneer dat nodig is
   - Wat zou ik moeten veranderen om prettiger samen te werken
-    - Colin: eerder iemand durven aan te spreken op hun verantwoordelijkheid
-    - Dylan: meer comments in code
+    - Colin: eerder durven iemand aanspreken op hun verantwoordelijkheid
+    - Dylan: meer comments toevoegen in de code
   - Waar ben je trots op?
-    - Dylan: je verantwoordelijkheid
-    - Colin: verder ontwikkelen vanuit jezelf
+    - Dylan: laat zien hoe je verantwoordelijkheid neemt
+    - Colin: jezelf verder ontwikkelen door zelf uit te zoeken hoe iets werkt en dit toe te passen
 
 
 
