@@ -28,8 +28,7 @@
     <style>
         @font-face {
             font-family: "MontserratAlternates";
-            src: url("/fonts/MontserratAlternates-Regular.ttf")
-                format("truetype");
+            src: url("/fonts/MontserratAlternates-Regular.ttf") format("truetype");
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -37,8 +36,7 @@
 
         @font-face {
             font-family: "MontserratAlternates";
-            src: url("/fonts/MontserratAlternates-SemiBold.ttf")
-                format("truetype");
+            src: url("/fonts/MontserratAlternates-SemiBold.ttf") format("truetype");
             font-weight: 600;
             font-style: normal;
             font-display: swap;
@@ -528,6 +526,7 @@
         }
     </style>
 </svelte:head>
+
 <main>
     {@render children?.()}
 </main>
