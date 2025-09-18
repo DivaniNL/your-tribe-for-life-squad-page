@@ -10,12 +10,12 @@
         <h1>{member.name}</h1>
     {/if}
 
-    <section class="breadcrumbs">
+    <div class="breadcrumbs">
         <p>
             <a href="/" class="home-link" aria-current="false">Squad 2F</a> &gt;
             <a href="#" class="detail-link" aria-current="true">{member.name}</a>
         </p>
-    </section>
+    </div>
 
     {#if member.mugshot}
         <img class="animation-fade-in" src="https://fdnd.directus.app/assets/{member.mugshot}?width=500&height=500" alt="foto van {member.name}" width="250" height="250" style="view-transition-name: person-{member.id}" >
