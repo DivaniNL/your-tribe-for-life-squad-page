@@ -490,7 +490,7 @@
             .animation-slide-in--up {
                 transform: translateY(100px);
                 opacity: 0;
-                animation: 0.3s fade-in-translate var(--delay) ease-out forwards;
+                animation: 0.3s fade-in-translate var(--delay) ease-in-out forwards;
             }
         }
 
