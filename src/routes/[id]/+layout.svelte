@@ -14,6 +14,20 @@
 			margin: 0.3em 0 0 1.5rem;
 		}
 
+		.breadcrumbs {
+			grid-column: 1 / 1;	
+			grid-row: 2 / 2;
+			margin: 0.3em 0 0 1.5rem;
+		}
+
+		.breadcrumbs a{
+			color: white;
+		}
+
+		.breadcrumbs a[aria-current="true"]{
+			color: #fffc86
+		}
+
 		img {
 			border: 5px solid var(--text-color);
 			border-radius: 15px;
@@ -117,18 +131,6 @@
 			}
 
 		}
-		.breadcrumbs {
-			grid-column: 1 / 1;	
-			grid-row: 2 / 2;
-			margin: 0.3em 0 0 1.5rem;
-		}
-		.breadcrumbs a{
-			color: white;
-		}
-		.breadcrumbs a[aria-current="true"]{
-			color: #fffc86
-		}
-
 	</style>
 </svelte:head>
 

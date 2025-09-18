@@ -1,6 +1,5 @@
-
 export async function load({url,params}){
-        const countryNamesNL = {
+    const countryNamesNL = {
         AFG: "Afghanistan",
         ALB: "Albanië",
         DZA: "Algerije",
@@ -174,9 +173,9 @@ export async function load({url,params}){
         ZWE: "Zimbabwe",
     };
 
-
     const membersReponse = await fetch('https://fdnd.directus.app/items/person/'+params.id)
     const membersReponseData = await membersReponse.json()
     let DutchCountryName = countryNamesNL[membersReponseData.data["fav_country"]];
+
     return{member: membersReponseData.data, DutchCountryName: DutchCountryName}
 }

@@ -179,7 +179,9 @@ const countryNamesNL = {
     ZMB: "Zambia",
     ZWE: "Zimbabwe"
 };
+
 const slugs = allowedFilters.map(filter => filter[0]);
+
 export async function load({url, params}){
     const filtertype = params.filtertype;
     const isValidFilter = slugs.includes(filtertype);

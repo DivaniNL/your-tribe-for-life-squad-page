@@ -24,12 +24,11 @@
 </script>
 
 <svelte:head>
-    <link rel="icon" href={favicon} />
+    <link rel="icon" href={favicon}>
     <style>
         @font-face {
             font-family: "MontserratAlternates";
-            src: url("/fonts/MontserratAlternates-Regular.ttf")
-                format("truetype");
+            src: url("/fonts/MontserratAlternates-Regular.ttf") format("truetype");
             font-weight: 400;
             font-style: normal;
             font-display: swap;
@@ -37,8 +36,7 @@
 
         @font-face {
             font-family: "MontserratAlternates";
-            src: url("/fonts/MontserratAlternates-SemiBold.ttf")
-                format("truetype");
+            src: url("/fonts/MontserratAlternates-SemiBold.ttf") format("truetype");
             font-weight: 600;
             font-style: normal;
             font-display: swap;
@@ -141,11 +139,13 @@
             appearance: none;
             margin-top: 10px;
         }
+
         #toggle-filter,
         #toggle-filter + label {
             display: block;
             cursor: pointer;
         }
+
         #toggle-filter + label {
             background-color: #66e5bf;
             color: #050542;
@@ -167,6 +167,7 @@
                 display: none;
             }
         }
+
         body:has(#toggle-filter:checked) ul.filters {
             transform: scale(1);
             height: 220px;
@@ -465,6 +466,7 @@
         .person-card a {
             z-index: 999;
         }
+
         .removefilter {
             text-decoration: underline;
             color: white;
@@ -528,6 +530,7 @@
         }
     </style>
 </svelte:head>
+
 <main>
     {@render children?.()}
 </main>
