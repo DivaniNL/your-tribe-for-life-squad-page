@@ -58,5 +58,22 @@ Daarnaast hebben we gekozen om de filter te tonen met labels op de slider wannee
 
 ## Functionaliteiten uitleg
 
+## Library's
+
+### SvelteKit
+
+SvelteKit is een modern webframework dat gebouwd is bovenop Svelte, waarmee je snel en efficiënt webapplicaties kunt ontwikkelen. Het regelt zaken zoals routing, server-side rendering (SSR), data fetching en build-optimalisatie voor je. In tegenstelling tot frameworks als React of Vue gebruikt Svelte compile-time optimalisaties, waardoor de uiteindelijke code kleiner en sneller is. Daardoor is SvelteKit ideaal voor zowel kleine websites als grotere, schaalbare webapps.
+
+## Onderdelen
+
 ### Filter
+
+We maken gebruik van filteren met File based routing. We geven een parameter door aan de filterpagina waarmee de content in de slides veranderd. Waar je eerst iemand's favoriete dier zag, staat nu iemand's favoriete bakkie pleur.
+Uiteraard kunnen deze filters ook verwijderd worden door op de "verwijder filter" knop te drukken.
+
+### Slider
+
+We hebben een slider gemaakt die bestaat uit een unordened list met allemaal list items. In deze list items zit de basic informatie van een student. Door op de lees meer knop te klikken kan je naar de detailpagina gaan waar meer informatie staat over deze desbetreffende student.
+
+
 
